@@ -1,0 +1,9 @@
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+  <input type="text" id="myInput" placeholder="Title..." [(ngModel)]="txtItem" name="txtItem">
+  <span (click)="addItem()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  <li *ngFor="let item of list;let i=index" [ngClass]="{'checked': item.checked==true}" (click)="checkItem(item)">{{item.text}} <span class="close" (click)="deleteItem(i)">×</span></li>
+</ul>
